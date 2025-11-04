@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Our Story & Contact | Basecamp Creative Co.</title>
+    
+    <!-- Load Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Configure Tailwind to use Inter font and define custom colors -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        // Earth & Copper Theme
+                        'base-dark': '#3C4818',      // Deep Forest Olive (Header, Contrast)
+                        'accent-copper': '#CC7722',  // Rustic Copper (Buttons, Fire)
+                        'sandstone-bg': '#EAE3D2',   // Rich Earth Tan (Main Background)
+                        'deep-brown': '#2E1A0D',     // Deep Earth Brown (Text)
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    },
+                }
+            }
+        }
+    </script>
+    <style>
+        /* Common styles (Copied to all 6 files) */
+        .menu-hidden {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease-out;
+        }
+        .menu-visible {
+            max-height: 300px; 
+            transition: max-height 0.5s ease-in;
+        }
+        .header-logo { height: 32px; width: auto; }
+        @media (min-width: 768px) { .header-logo { height: 40px; } }
+    </style>
+</head>
+<body class="bg-sandstone-bg text-deep-brown font-sans min-h-screen flex flex-col">
+
+    <!-- Header & Navigation -->
+    <header class="sticky top-0 z-50 shadow-md bg-base-dark">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-16">
+                <!-- Logo/Brand Name -->
+                <div class="flex-shrink-0">
+                    <a href="index.html">
+                        <img src="uploaded:1000007367.webp-6d9a930d-2b4a-4228-a53c-a991823a078e" 
+                             alt="Basecamp Creative Co. Logo - Forge, Lens & Trail" 
+                             class="header-logo"
+                        >
+                    </a>
+                </div>
+
+                <!-- Desktop Navigation (Links point to new files) -->
+                <nav class="hidden md:flex md:space-x-8">
+                    <a href="forge.html" class="text-sandstone-bg hover:text-accent-copper px-3 py-2 text-sm font-medium transition duration-150">The Forge</a>
+                    <a href="lens.html" class="text-sandstone-bg hover:text-accent-copper px-3 py-2 text-sm font-medium transition duration-150">The Lens</a>
+                    <a href="trail-talk.html" class="text-sandstone-bg hover:text-accent-copper px-3 py-2 text-sm font-medium transition duration-150">Trail Talk</a>
+                    <a href="about.html" class="text-accent-copper px-3 py-2 text-sm font-medium transition duration-150">Our Story</a>
+                    <a href="adventures.html" class="bg-accent-copper text-white rounded-full px-3 py-2 text-sm font-medium hover:bg-opacity-90 transition duration-150 shadow-lg">Adventures</a>
+                </nav>
+
+                <!-- Mobile Menu Button -->
+                <button id="mobile-menu-button" type="button" class="md:hidden p-2 rounded-md text-sandstone-bg hover:text-accent-copper focus:outline-none focus:ring-2 focus:ring-accent-copper" aria-controls="mobile-menu" aria-expanded="false">
+                    <!-- Hamburger icon -->
+                    <svg class="block h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+                    </svg>
+                    <!-- Close icon -->
+                    <svg class="hidden h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+                    </svg>
+                </button>
+            </div>
+        </div>
+
+        <!-- Mobile Menu -->
+        <div class="menu-hidden md:hidden" id="mobile-menu">
+            <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
+                <a href="forge.html" class="text-sandstone-bg hover:bg-base-dark hover:text-accent-copper block px-3 py-2 rounded-md text-base font-medium transition duration-150">The Forge</a>
+                <a href="lens.html" class="text-sandstone-bg hover:bg-base-dark hover:text-accent-copper block px-3 py-2 rounded-md text-base font-medium transition duration-150">The Lens</a>
+                <a href="trail-talk.html" class="text-sandstone-bg hover:bg-base-dark hover:text-accent-copper block px-3 py-2 rounded-md text-base font-medium transition duration-150">Trail Talk</a>
+                <a href="about.html" class="text-accent-copper hover:bg-base-dark block px-3 py-2 rounded-md text-base font-medium transition duration-150">Our Story</a>
+                <a href="adventures.html" class="bg-accent-copper text-white block px-3 py-2 rounded-md text-base font-medium mt-2 text-center hover:bg-opacity-90 transition duration-150">Adventures</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content Area: Our Story -->
+    <main class="max-w-5xl mx-auto py-16 px-4 sm:px-6 lg:px-8 flex-grow">
+        <h1 class="text-4xl font-bold text-center text-base-dark mb-10 border-b-2 border-accent-copper pb-2">
+            Our Story: Husband, Father, Adventurer
+        </h1>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-10 items-start">
+            
+            <!-- Sidebar Image/Mission -->
+            <div class="md:col-span-1 bg-white p-6 rounded-xl shadow-lg border-t-4 border-accent-copper">
+                <img src="https://placehold.co/400x400/3C4818/EAE3D2?text=Family+Adventure" alt="A family hiking portrait" class="w-full rounded-lg shadow-md mb-6">
+                
+                <h3 class="text-xl font-bold text-deep-brown mb-3">Our Mission</h3>
+                <p class="text-sm text-gray-700">
+                    To forge durable goods and share authentic adventures that inspire families to step away from the everyday and connect with the wild. Every piece of iron and every photograph tells a story.
+                </p>
+                <div class="mt-4 text-center">
+                    <a href="adventures.html" class="inline-block text-sm font-medium text-accent-copper hover:text-base-dark transition duration-150">
+                        Join the Journey &rarr;
+                    </a>
+                </div>
+            </div>
+
+            <!-- Main Story Content -->
+            <div class="md:col-span-2 space-y-6">
+                <h2 class="text-2xl font-bold text-base-dark">From the Forge to the Forest Floor</h2>
+                <p class="text-lg text-deep-brown">
+                    Basecamp Creative Co. is built on three passions: the rugged craftsmanship of **blacksmithing**, the pursuit of the perfect **photograph** in the wild, and the foundation of **family**. I'm a husband and a father of two, and every piece of content, every item in the forge, and every adventure we document is filtered through that lens.
+                </p>
+
+                <p class="text-lg text-deep-brown">
+                    My journey as an amateur blacksmith started as a quest to create tools as durable as the places we explore. This naturally fused with my work as a **professional photographer**, capturing the stunning landscapes of the Pacific Northwest and the genuine joy of family on the trail.
+                </p>
+
+                <p class="text-lg text-deep-brown">
+                    We believe your home should be your basecamp—a place where durable, beautiful things live alongside memories of the trail. This site is a creative outlet and a community resource for families who value quality goods and shared adventure.
+                </p>
+
+                <h2 class="text-2xl font-bold text-base-dark pt-4">Connect with the Basecamp</h2>
+                <p class="text-deep-brown">
+                    Have a question about a custom forging project, want to license a photo, or need to book a PNW adventure? Send us a message!
+                </p>
+
+                <!-- Contact Form Simulation -->
+                <div class="bg-white p-6 rounded-xl shadow-lg">
+                    <form onsubmit="event.preventDefault(); showContactMessage();" class="space-y-4">
+                        <div>
+                            <label for="name" class="block text-sm font-medium text-base-dark">Name</label>
+                            <input type="text" id="name" name="name" class="mt-1 block w-full border border-gray-300 rounded-md shadow-sm p-3 focus:ring-accent-copper focus:border-accent-copper bg-sandstone-bg">
+                        </div>
+                        <div>
+                            <label for="email" class="block text-sm font-medium text-base-dark">Email</label>
+                            <input type="email" id="email" name="email" class="mt-1 block w-full border border-gray-300 rounded-md shadow-sm p-3 focus:ring-accent-copper focus:border-accent-copper bg-sandstone-bg" required>
+                        </div>
+                        <div>
+                            <label for="message" class="block text-sm font-medium text-base-dark">Message / Inquiry Type</label>
+                            <textarea id="message" name="message" rows="4" class="mt-1 block w-full border border-gray-300 rounded-md shadow-sm p-3 focus:ring-accent-copper focus:border-accent-copper bg-sandstone-bg" required></textarea>
+                        </div>
+                        <button type="submit" class="w-full py-3 px-4 border border-transparent rounded-full shadow-lg text-white font-semibold bg-accent-copper hover:bg-opacity-90 transition duration-200">
+                            Send Inquiry
+                        </button>
+                    </form>
+                    <p id="contact-message" class="mt-4 text-center text-sm font-medium hidden">
+                        <!-- Success/Error message displayed here -->
+                    </p>
+                </div>
+            </div>
+            
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="mt-12 bg-base-dark text-sandstone-bg p-8 w-full">
+        <div class="max-w-7xl mx-auto text-center">
+            <p class="font-bold text-lg mb-2">Basecamp Creative Co.</p>
+            <p class="text-sm mb-4">A Family Adventure: Blacksmithing, Photography, & Community.</p>
+            
+            <div class="flex justify-center space-x-6 text-sm">
+                <a href="forge.html" class="hover:text-accent-copper transition duration-150">The Forge</a>
+                <a href="lens.html" class="hover:text-accent-copper transition duration-150">The Lens</a>
+                <a href="trail-talk.html" class="hover:text-accent-copper transition duration-150">Trail Talk</a>
+                <a href="adventures.html" class="hover:text-accent-copper transition duration-150">Adventures</a>
+            </div>
+            
+            <p class="mt-6 text-xs text-gray-400">© 2025 Basecamp Creative Co. | Forged with passion.</p>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script>
+        // Mobile Menu Toggle Logic (Copied to all 6 files)
+        const menuButton = document.getElementById('mobile-menu-button');
+        const mobileMenu = document.getElementById('mobile-menu');
+
+        menuButton.addEventListener('click', () => {
+            const isExpanded = menuButton.getAttribute('aria-expanded') === 'true' || false;
+            menuButton.setAttribute('aria-expanded', !isExpanded);
+
+            if (isExpanded) {
+                mobileMenu.classList.add('menu-hidden');
+                mobileMenu.classList.remove('menu-visible');
+                menuButton.querySelector('svg:first-child').classList.remove('hidden');
+                menuButton.querySelector('svg:last-child').classList.add('hidden');
+            } else {
+                mobileMenu.classList.add('menu-visible');
+                mobileMenu.classList.remove('menu-hidden');
+                menuButton.querySelector('svg:first-child').classList.add('hidden');
+                menuButton.querySelector('svg:last-child').classList.remove('hidden');
+            }
+        });
+
+        document.querySelectorAll('#mobile-menu a').forEach(item => {
+            item.addEventListener('click', () => {
+                mobileMenu.classList.add('menu-hidden');
+                mobileMenu.classList.remove('menu-visible');
+                menuButton.setAttribute('aria-expanded', 'false');
+                menuButton.querySelector('svg:first-child').classList.remove('hidden');
+                menuButton.querySelector('svg:last-child').classList.add('hidden');
+            });
+        });
+
+        // Contact Form Submission Simulation
+        function showContactMessage() {
+            const contactMessage = document.getElementById('contact-message');
+            contactMessage.textContent = 'Thank you! Your message has been sent, and we\'ll be in touch soon.';
+            contactMessage.classList.remove('hidden');
+            contactMessage.classList.add('text-base-dark');
+            
+            // Clear the form fields after successful submission simulation
+            document.getElementById('name').value = '';
+            document.getElementById('email').value = '';
+            document.getElementById('message').value = '';
+        }
+    </script>
+
+</body>
+</html>
